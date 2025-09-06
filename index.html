@@ -22,7 +22,7 @@
         body {
             font-family: 'Noto Sans JP', sans-serif;
             margin: 0;
-            padding-top: 80px; /* 固定ヘッダーの高さ分、コンテンツを下にずらす */
+            padding: 0;
             background-color: var(--white);
             color: var(--text-color);
             line-height: 1.6;
@@ -45,11 +45,10 @@
         .hero-section {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: var(--white);
-            padding: 80px 16px; /* 0.8倍に調整 */
+            padding: 100px 20px;
             text-align: center;
             position: relative;
             overflow: hidden;
-            padding-top: 100px;
         }
 
         .hero-section::before {
@@ -108,7 +107,6 @@
             padding: 0 20px;
             box-sizing: border-box;
             z-index: 1000;
-            background-color: var(--primary-color);
         }
 
         .hero-nav .logo {
@@ -116,7 +114,6 @@
             font-weight: 700;
             color: var(--white);
             text-decoration: none;
-            width: 120px;
         }
 
         .hero-nav .cta-button {
@@ -216,9 +213,6 @@
 
         /* モバイル対応 */
         @media (max-width: 768px) {
-            body {
-                padding-top: 100px;
-            }
             h2 {
                 font-size: 2rem;
             }
@@ -249,10 +243,6 @@
 
     <!-- 1. ファーストビュー -->
     <header class="hero-section">
-        <nav class="hero-nav">
-            <img src="https://placehold.co/150x150/FFFFFF/FE7B33?text=声キャン！" alt="声キャン！ロゴ" class="logo">
-            <a href="#" class="cta-button">今すぐ始める</a>
-        </nav>
         <div class="hero-content">
             <h1>就活をもっと楽しく、<br>ポイ活をもっとお得に</h1>
         </div>
