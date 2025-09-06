@@ -85,7 +85,7 @@ h2 {
     font-size: clamp(2.5rem, 8vw, 5rem);
     font-weight: 700;
     margin: 0;
-    line-height: 2.0;
+    line-height: 3.0;
 }
 
 /* ハイライトされたテキストのスタイル */
