@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-s`cale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ウェブサイトLP</title>
     <!-- Google Fonts: RobotoとNoto Sans JPを使用 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,6 +49,12 @@
             text-align: center;
             position: relative;
             overflow: hidden;
+            height: 33.33vh; /* 画面の1/3の高さに設定 */
+            padding-top: 0;
+            padding-bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .hero-section::before {
@@ -120,7 +126,39 @@
             margin: 0;
         }
 
-        /* 2. サービス紹介 */
+        /* 2. メリットセクションのスタイル */
+        .merits-section {
+            padding: 48px 16px;
+            background-color: var(--white);
+        }
+
+        .merit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .merit-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .merit-item img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+        }
+
+        .merit-item h3 {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        /* 3. サービス紹介 */
         .service-section {
             background-color: var(--white);
         }
@@ -153,7 +191,7 @@
             margin-top: 0;
         }
 
-        /* 3. 特徴 */
+        /* 4. 特徴 */
         .feature-section {
             background-color: #fffaf0; /* 新しい背景色 */
         }
@@ -177,7 +215,7 @@
             margin-bottom: 15px;
         }
 
-        /* 4. FAQ */
+        /* 5. FAQ */
         .faq-section {
             background-color: var(--white);
         }
@@ -198,7 +236,7 @@
             color: var(--primary-color);
         }
 
-        /* 5. フッター */
+        /* 6. フッター */
         .footer-section {
             padding: 40px 20px;
             background-color: var(--primary-color);
@@ -244,11 +282,42 @@
     <!-- 1. ファーストビュー -->
     <header class="hero-section">
         <div class="hero-content">
-            <h1>就活をもっと楽しく、<br>ポイ活をもっとお得に</h1>
+            <h1>就活をもっと楽しく、<br>ポイ活をもっとお得に。</h1>
         </div>
     </header>
 
-    <!-- 2. サービス紹介 -->
+    <!-- 2. メリットセクション -->
+    <section class="merits-section">
+        <h2>メリット</h2>
+        <div class="merit-grid">
+            <div class="merit-item">
+                <img src="https://placehold.co/80x80/FE7B33/FFFFFF?text=ポイント" alt="ポイント獲得アイコン">
+                <h3>ポイント獲得</h3>
+            </div>
+            <div class="merit-item">
+                <img src="https://placehold.co/80x80/FE7B33/FFFFFF?text=情報" alt="就活情報収集アイコン">
+                <h3>就活情報収集</h3>
+            </div>
+            <div class="merit-item">
+                <img src="https://placehold.co/80x80/FE7B33/FFFFFF?text=サポート" alt="就活サポートアイコン">
+                <h3>就活サポート</h3>
+            </div>
+            <div class="merit-item">
+                <img src="https://placehold.co/80x80/38B6FF/FFFFFF?text=時事ネタ" alt="時事ネタアイコン">
+                <h3>就活用の時事ネタ<br>（近日公開）</h3>
+            </div>
+            <div class="merit-item">
+                <img src="https://placehold.co/80x80/38B6FF/FFFFFF?text=診断" alt="企業診断アイコン">
+                <h3>あなたにあった<br>おすすめ企業診断<br>（近日公開）</h3>
+            </div>
+            <div class="merit-item">
+                <img src="https://placehold.co/80x80/38B6FF/FFFFFF?text=文章" alt="文章作成アイコン">
+                <h3>履歴書に使える<br>文章作成<br>（近日公開）</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. サービス紹介 -->
     <section class="section service-section">
         <h2>サービス紹介</h2>
         <div class="service-item">
@@ -267,7 +336,7 @@
         </div>
     </section>
 
-    <!-- 3. 特徴 -->
+    <!-- 4. 特徴 -->
     <section class="section feature-section">
         <h2>サービスの3つの特徴</h2>
         <div class="feature-grid">
@@ -289,7 +358,7 @@
         </div>
     </section>
     
-    <!-- 4. FAQ -->
+    <!-- 5. FAQ -->
     <section class="section faq-section">
         <h2>よくあるご質問</h2>
         <div class="faq-list">
@@ -308,7 +377,7 @@
         </div>
     </section>
 
-    <!-- 5. フッター -->
+    <!-- 6. フッター -->
     <footer class="footer-section">
         <p>&copy; 2024 会社名. All Rights Reserved.</p>
     </footer>
