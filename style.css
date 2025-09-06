@@ -57,8 +57,8 @@ h2 {
 
 /* 1. ファーストビュー */
 .hero {
+    /* 背景画像と背景色を分離して、画像のみの透明度を調整する */
     background-color: var(--background-light);
-    background-image: url('https://placehold.co/1200x800/FFEBDD/FE7B33?text=学生が笑顔でアンケート回答しているイラスト');
     background-size: cover;
     background-position: center;
     height: calc(100vh - 80px); /* 固定ヘッダーの高さ分、高さを調整 */
@@ -67,10 +67,25 @@ h2 {
     align-items: center;
     text-align: center;
     position: relative;
+    overflow: hidden; /* 疑似要素がはみ出さないように */
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://raw.githubusercontent.com/NSDKIT/koechan_student/main/%E8%83%8C%E6%99%AF.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5; /* ここで画像の透明度を調整 */
+    z-index: -1; /* コンテンツの下に配置 */
 }
 
 .hero-content {
-    background: rgba(255, 255, 255, 0.85); /* 半透明の背景でテキストを読みやすく */
+    background: rgba(255, 255, 255, 0.6); /* 透明度を上げて、背景画像が見えやすくする */
     padding: 40px;
     border-radius: var(--border-radius);
     max-width: 700px;
