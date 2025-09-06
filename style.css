@@ -358,10 +358,13 @@ h2 {
         align-items: stretch;
     }
     .flow-item { width: auto; text-align: center; }
-    .arrow {
+
+    /* 修正点: モバイルでの矢印の向きを縦に変更 */
+    .flow-diagram .arrow {
         transform: rotate(90deg);
         margin: 5px 0;
-        display: block; /* スマホで矢印を表示 */
+        display: block;
     }
+
     .step-arrow { display: block; transform: rotate(90deg); }
 }
