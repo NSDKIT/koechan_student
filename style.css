@@ -324,8 +324,14 @@ h2 {
         padding: 80px 20px;
     }
 
-    .catchphrase { font-size: 2rem; }
-    .sub-catchphrase { font-size: 1rem; }
+    .catchphrase { 
+        font-size: 2rem;
+        line-height: 1.2; /* 行間を調整して2行に収める */
+    }
+    .sub-catchphrase { 
+        font-size: 1rem;
+        line-height: 1.4; /* 行間を調整して2行に収める */
+    }
     .cta-buttons { flex-direction: column; }
     .cta-button { width: 100%; box-sizing: border-box; }
 
