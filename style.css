@@ -39,7 +39,7 @@ h2 {
     text-align: center;
     position: relative;
     overflow: hidden;
-    height: 33.33vh; /* 画面の1/3の高さに設定 */
+    height: 50.00vh; /* 画面の1/3の高さに設定 */
     padding-top: 0;
     padding-bottom: 0;
     display: flex;
