@@ -340,13 +340,4 @@ h2 {
         align-items: stretch;
     }
     .flow-item { width: auto; text-align: center; }
-
-    /* 修正点: モバイルでの矢印の向きを縦に変更 */
-    .flow-diagram .arrow {
-        transform: rotate(90deg);
-        margin: 5px 0;
-        display: block;
-    }
-
-    .step-arrow { display: block; transform: rotate(90deg); }
 }
