@@ -15,6 +15,7 @@ body {
     background-color: var(--white);
     color: var(--text-color);
     line-height: 1.6;
+    padding-top: 80px;
 }
 
 /* セクション共通スタイル */
@@ -203,6 +204,9 @@ h2 {
 
 /* モバイル対応 */
 @media (max-width: 768px) {
+    body {
+        padding-top: 100px;
+    }
     h2 {
         font-size: 2rem;
     }
