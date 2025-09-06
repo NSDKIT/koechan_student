@@ -89,7 +89,7 @@ h2 {
 
 /* ハイライトされたテキストのスタイル */
 .hero-content .highlight-text {
-    font-size: 2.7em; /* 親要素の1.5倍のサイズ */
+    font-size: 2.6em; /* 親要素の1.5倍のサイズ */
     color: var(--primary-color);
 }
 
