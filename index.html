@@ -355,10 +355,12 @@
             .cta-buttons { flex-direction: column; }
             .cta-button { width: 100%; box-sizing: border-box; }
 
-            .flow-diagram {
+            .flow-diagram, .steps-container {
                 flex-direction: column;
                 align-items: stretch;
             }
+            .flow-item { width: auto; text-align: center; }
+
             /* 修正点: モバイルでの矢印の向きを縦に変更 */
             .flow-diagram .arrow {
                 transform: rotate(90deg);
@@ -366,7 +368,6 @@
                 display: block;
             }
 
-            .flow-item { width: auto; text-align: center; }
             .step-arrow { display: block; transform: rotate(90deg); }
         }
     </style>
@@ -395,15 +396,7 @@
     <section class="section about">
         <h2>声キャン！とは？</h2>
         <p>企業の採用情報やSNSは、まだ学生に届いていません。声キャン！では、あなたの声をアンケートで集めて、企業に改善のヒントを届けます。</p>
-        <div class="flow-diagram">
-            <div class="flow-item">学生</div>
-            <span class="arrow">→</span>
-            <div class="flow-item">声キャン！</div>
-            <span class="arrow">→</span>
-            <div class="flow-item">企業</div>
-            <span class="arrow">→</span>
-            <div class="flow-item">改善されたインターン・採用情報</div>
-        </div>
+        
     </section>
 
     <!-- 3. 参加するメリット -->
