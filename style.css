@@ -1,0 +1,331 @@
+:root {
+    --light-green: #e0f2e0;
+    --dark-green: #388e3c;
+    --yellow: #ffeb3b;
+    --gray-text: #555;
+    --light-gray: #f5f5f5;
+    --border-radius: 12px;
+}
+
+body {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--gray-text);
+}
+
+h1, h2, h3 {
+    color: var(--dark-green);
+    font-weight: 800;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.section {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* 1. ファーストビュー */
+.hero {
+    background-color: var(--light-green);
+    background-image: url('placeholder-student-illustration.png'); /* 適切なイラスト画像に差し替えてください */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    max-width: 700px;
+}
+
+.catchphrase {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+.sub-catchphrase {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.2s;
+}
+
+.cta-button.primary {
+    background-color: var(--dark-green);
+    color: white;
+}
+
+.cta-button.secondary {
+    background-color: var(--yellow);
+    color: var(--dark-green);
+    border: 2px solid var(--dark-green);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+}
+
+/* 2. 声キャン！とは？ */
+.about {
+    text-align: center;
+}
+
+.flow-diagram {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    gap: 10px;
+}
+
+.flow-item {
+    background-color: var(--light-green);
+    padding: 15px 25px;
+    border-radius: var(--border-radius);
+    font-weight: 700;
+    color: var(--dark-green);
+}
+
+.arrow {
+    font-size: 2rem;
+    color: var(--dark-green);
+}
+
+/* 3. 参加するメリット */
+.benefits {
+    background-color: var(--light-gray);
+}
+
+.benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.benefit-item {
+    background-color: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.benefit-item .icon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.benefit-item h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.benefit-item .sub-text {
+    font-size: 0.9rem;
+    color: var(--gray-text);
+    margin-top: 10px;
+}
+
+/* 4. 参加の流れ */
+.how-to-join {
+    text-align: center;
+}
+
+.steps-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.step-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+}
+
+.step-number {
+    background-color: var(--dark-green);
+    color: white;
+    font-weight: 700;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.step-arrow {
+    font-size: 2rem;
+    color: var(--dark-green);
+    display: none; /* デスクトップ用 */
+}
+
+@media (min-width: 768px) {
+    .step-arrow {
+        display: block;
+    }
+}
+
+/* 5. 学生の声 */
+.voices {
+    background-color: var(--light-green);
+}
+
+.voice-card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.voice-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
+    flex: 1;
+}
+
+/* 6. よくある質問 */
+.faq {
+    background-color: var(--light-gray);
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin-bottom: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.faq-item h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: var(--dark-green);
+}
+
+/* 7. フッター */
+.footer {
+    background-color: var(--dark-green);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.line-cta {
+    display: inline-block;
+    background-color: #00c300; /* LINEカラー */
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    margin-bottom: 20px;
+    transition: background-color 0.2s;
+}
+
+.line-cta:hover {
+    background-color: #00a800;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.social-links a:hover {
+    opacity: 1;
+}
+
+.company-info {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .hero {
+        height: auto;
+        padding: 80px 20px;
+    }
+
+    .catchphrase {
+        font-size: 2rem;
+    }
+
+    .sub-catchphrase {
+        font-size: 1rem;
+    }
+
+    .flow-diagram {
+        flex-direction: column;
+    }
+
+    .flow-item {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .arrow {
+        transform: rotate(90deg);
+        margin: 5px 0;
+    }
+
+    .steps-container {
+        flex-direction: column;
+    }
+
+    .step-item {
+        width: 100%;
+        text-align: center;
+    }
+}
