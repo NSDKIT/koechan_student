@@ -33,8 +33,8 @@ h2 {
 
 /* 1. ファーストビュー */
 .hero-section {
-/*     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); */
-    color: var(--white);
+    background: var(--white); /* グラデーションを削除 */
+    color: var(--black);
     padding: 100px 20px;
     text-align: center;
     position: relative;
@@ -69,6 +69,7 @@ h2 {
     width: 100%;
     box-sizing: border-box;
     padding: 0 20px;
+    background-color: rgba(255, 255, 255, 0.6);
 }
 
 .left-align {
@@ -84,12 +85,12 @@ h2 {
     font-size: clamp(2.5rem, 8vw, 5rem);
     font-weight: 700;
     margin: 0;
-    line-height: 3.0;
+    line-height: 1.5;
 }
 
 /* ハイライトされたテキストのスタイル */
 .hero-content .highlight-text {
-    font-size: 2.0em; /* 親要素の1.5倍のサイズ */
+    font-size: 2.5em; /* 親要素の1.5倍のサイズ */
     color: var(--primary-color);
 }
 
@@ -243,7 +244,7 @@ h2 {
         font-size: 2rem;
     }
     .hero-content h1 {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
         line-height: 1.2;
     }
     .hero-nav {
