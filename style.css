@@ -1,337 +1,229 @@
-/* デザインコンセプトのカラー変数を定義 */
 :root {
     --primary-color: #FE7B33;
     --secondary-color: #38B6FF;
-    --background-light: #FFEBDD;
-    --gray-text: #555;
-    --light-gray: #f5f5f5;
-    --border-radius: 12px;
+    --white: #FFFFFF;
+    --black: #000000;
+    --text-color: #333333;
+    --border-radius-large: 20px;
+    --border-radius-small: 10px;
 }
 
 body {
-    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: var(--white);
+    color: var(--text-color);
     line-height: 1.6;
-    color: var(--gray-text);
-    background-color: white;
-    overflow-x: hidden; /* 横スクロールを防ぐ */
-    padding-top: 80px; /* 固定ヘッダーの高さ分、コンテンツを下にずらす */
 }
 
-h1, h2, h3 {
-    color: var(--primary-color);
-    font-weight: 800;
+/* セクション共通スタイル */
+.section {
+    padding: 60px 20px;
+    text-align: center;
 }
 
 h2 {
-    text-align: center;
     font-size: 2.5rem;
-    margin-bottom: 2rem;
-}
-
-.section {
-    padding: 60px 20px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-/* ロゴを配置する固定ヘッダー */
-.site-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 10px 20px;
-    z-index: 100;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    display: flex;
-    align-items: center;
-}
-
-.site-header .logo {
-    height: 50px;
-    border-radius: 8px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 40px;
 }
 
 /* 1. ファーストビュー */
-.hero {
-    /* 背景画像と背景色を分離して、画像のみの透明度を調整する */
-    background-color: var(--background-light);
-    background-size: cover;
-    background-position: center;
-    height: calc(100vh - 80px); /* 固定ヘッダーの高さ分、高さを調整 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 100px 20px;
     text-align: center;
     position: relative;
-    overflow: hidden; /* 疑似要素がはみ出さないように */
+    overflow: hidden;
 }
 
-.hero::after {
+.hero-section::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('https://raw.githubusercontent.com/NSDKIT/koechan_student/main/%E8%83%8C%E6%99%AF2.png');
+    background-image: url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1470&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
-    opacity: 0.5; /* ここで画像の透明度を調整 */
-    z-index: -1; /* コンテンツの下に配置 */
+    opacity: 0.2;
+    z-index: 0;
 }
 
 .hero-content {
-    background: rgba(255, 255, 255, 0.6); /* 透明度を上げて、背景画像が見えやすくする */
-    padding: 40px;
-    border-radius: var(--border-radius);
-    max-width: 700px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+    margin-top: 80px;
 }
 
-.catchphrase {
-    font-size: 3rem;
-    font-weight: 800;
+/* 新しいファーストビューのスタイル */
+.hero-content h1 {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 700;
     margin: 0;
-}
-
-.sub-catchphrase {
-    font-size: 1.2rem;
-    margin-top: 10px;
-    margin-bottom: 30px;
-}
-
-.cta-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
+    line-height: 1.5;
 }
 
 .cta-button {
     display: inline-block;
-    padding: 15px 30px;
-    border-radius: 50px;
-    text-decoration: none;
+    padding: 15px 40px;
+    background-color: var(--white);
+    color: var(--primary-color);
     font-weight: 700;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.cta-button.primary {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-.cta-button.secondary {
-    background-color: var(--secondary-color);
-    color: white;
-    border: 2px solid var(--primary-color);
+    text-decoration: none;
+    border-radius: var(--border-radius-large);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+    margin-top: 30px;
 }
 
 .cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+    transform: translateY(-5px);
 }
 
-/* 2. 声キャン！とは？ */
-.about {
-    text-align: center;
+/* 新しいナビゲーションのスタイル */
+.hero-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 20px;
+    left: 0;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 1000;
 }
 
-.flow-diagram {
-    display: none; /* 図解を非表示に */
+.hero-nav .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--white);
+    text-decoration: none;
 }
 
-/* 3. 参加するメリット */
-.benefits {
-    background-color: var(--light-gray);
+.hero-nav .cta-button {
+    margin: 0;
 }
 
-.benefit-grid {
+/* 2. サービス紹介 */
+.service-section {
+    background-color: var(--white);
+}
+
+.service-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    gap: 40px;
+}
+
+.service-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.service-image {
+    width: 50%;
+    border-radius: var(--border-radius-large);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.service-text {
+    width: 50%;
+    text-align: left;
+}
+
+.service-text h3 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+/* 3. 特徴 */
+.feature-section {
+    background-color: #fffaf0;
+}
+
+.feature-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
-.benefit-item {
-    background-color: white;
+.feature-card {
+    background-color: var(--white);
     padding: 30px;
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    border-radius: var(--border-radius-large);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.benefit-item .icon {
+.feature-card .icon {
     font-size: 3rem;
-    margin-bottom: 10px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
 }
 
-.benefit-item h3 {
-    margin-top: 0;
-    margin-bottom: 10px;
+/* 4. FAQ */
+.faq-section {
+    background-color: var(--white);
 }
 
-.benefit-item .sub-text {
-    font-size: 0.9rem;
-    color: var(--gray-text);
-    margin-top: 10px;
-}
-
-/* 4. 参加の流れ */
-.how-to-join {
-    display: none; /* 4.参加の流れを非表示に */
-}
-
-/* 5. 学生の声 - スクロールアニメーション */
-.voices {
-    background-color: var(--background-light);
-}
-
-.scrolling-container {
-    max-width: 800px;
-    margin: 0 auto;
-    overflow: hidden; /* コンテナからはみ出る要素を非表示 */
-}
-
-.scrolling-content {
-    display: flex;
-    animation: scroll-left 15s linear infinite; /* 15秒で無限ループ */
-}
-
-.voice-card {
-    flex: 0 0 auto;
-    width: 400px; /* カードの幅 */
-    margin: 0 15px;
-    padding: 30px;
-    background-color: white;
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-/* スクロールアニメーションの定義 */
-@keyframes scroll-left {
-    0% {
-        transform: translateX(0%);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
-}
-
-/* 6. よくある質問 */
-.faq {
-    background-color: var(--light-gray);
-}
-
-.faq-container {
+.faq-list {
     max-width: 800px;
     margin: 0 auto;
 }
 
 .faq-item {
-    background-color: white;
-    padding: 20px;
-    border-radius: var(--border-radius);
-    margin-bottom: 15px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid #eee;
+    padding: 20px 0;
+    text-align: left;
 }
 
 .faq-item h3 {
-    margin-top: 0;
-    margin-bottom: 5px;
+    font-size: 1.2rem;
     color: var(--primary-color);
 }
 
-/* 7. フッター */
-.footer {
-    background-color: var(--primary-color);
-    color: white;
-    text-align: center;
+/* 5. フッター */
+.footer-section {
     padding: 40px 20px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
 }
 
-.line-cta {
-    display: inline-block;
-    background-color: var(--secondary-color);
-    color: white;
-    font-size: 1.2rem;
-    font-weight: 700;
-    padding: 15px 40px;
-    border-radius: 50px;
-    text-decoration: none;
-    margin-bottom: 20px;
-    transition: background-color 0.2s, transform 0.2s;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.line-cta:hover {
-    background-color: #2C9BDD;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
-}
-
-.social-links a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-    font-size: 1rem;
+.footer-section p {
+    margin: 0;
     opacity: 0.8;
 }
 
-.social-links a:hover {
-    opacity: 1;
-}
-
-.company-info {
-    margin-top: 20px;
-    font-size: 0.9rem;
-    opacity: 0.7;
-}
-
-/* レスポンシブ対応 */
+/* モバイル対応 */
 @media (max-width: 768px) {
     h2 {
         font-size: 2rem;
     }
-    .hero {
-        height: auto;
-        padding: 80px 20px;
+    .hero-content h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
     }
-
-    .catchphrase {
-        font-size: 10vw; /* 画面幅に応じて文字サイズを調整 */
+    .hero-nav {
+        flex-direction: column;
+        gap: 15px;
+        position: fixed;
+        top: 0;
+        padding: 20px;
     }
-    .sub-catchphrase {
-        font-size: 4vw; /* 画面幅に応じて文字サイズを調整 */
-    }
-    .cta-buttons {
+    .service-item {
         flex-direction: column;
     }
-    .cta-button {
+    .service-item:nth-child(even) {
+        flex-direction: column;
+    }
+    .service-image, .service-text {
         width: 100%;
-        box-sizing: border-box;
-    }
-
-    .flow-diagram, .steps-container {
-        flex-direction: column;
-        align-items: stretch;
-    }
-    .flow-item {
-        width: auto;
-        text-align: center;
-    }
-    .arrow {
-        transform: rotate(90deg);
-        margin: 5px 0;
-        display: block; /* スマホで矢印を表示 */
-    }
-    .step-arrow {
-        display: block;
-        transform: rotate(90deg);
     }
 }
