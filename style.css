@@ -39,7 +39,7 @@ h2 {
     text-align: center;
     position: relative;
     overflow: hidden;
-    height: 50.00vh; /* 画面の1/3の高さに設定 */
+    height: 33.33vh; /* 画面の1/3の高さに設定 */
     padding-top: 0;
     padding-bottom: 0;
     display: flex;
@@ -66,17 +66,12 @@ h2 {
     z-index: 1;
 }
 
-.hero-content .highlight-text {
-    font-size: 2.5em;
-    color: #FF0000; /* ここに好きな色を指定してください */
-}
-
 /* 新しいファーストビューのスタイル */
 .hero-content h1 {
     font-size: clamp(2.5rem, 8vw, 5rem);
     font-weight: 700;
     margin: 0;
-    line-height: 2.0;
+    line-height: 1.5;
 }
 
 /* 2. メリットセクションのスタイル */
@@ -208,7 +203,7 @@ h2 {
         font-size: 2rem;
     }
     .hero-content h1 {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         line-height: 1.2;
     }
     .hero-nav {
