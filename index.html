@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    
     <style>
         :root {
             --primary-color: #FE7B33;
@@ -16,8 +15,8 @@
             --white: #FFFFFF;
             --black: #000000;
             --text-color: #333333;
-            --border-radius-large: 20px;
-            --border-radius-small: 10px;
+            --border-radius-large: 10px; /* 0.5倍に縮小 */
+            --border-radius-small: 5px; /* 0.5倍に縮小 */
         }
 
         body {
@@ -31,22 +30,22 @@
         
         /* セクション共通スタイル */
         .section {
-            padding: 60px 20px;
+            padding: 30px 10px; /* 0.5倍に縮小 */
             text-align: center;
         }
 
         h2 {
-            font-size: 2.5rem;
+            font-size: 1.25rem; /* 0.5倍に縮小 */
             font-weight: 700;
             color: var(--primary-color);
-            margin-bottom: 40px;
+            margin-bottom: 20px; /* 0.5倍に縮小 */
         }
 
         /* 1. ファーストビュー */
         .hero-section {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: var(--white);
-            padding: 100px 20px;
+            padding: 50px 10px; /* 0.5倍に縮小 */
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -69,12 +68,12 @@
         .hero-content {
             position: relative;
             z-index: 1;
-            margin-top: 80px; /* ナビゲーションの高さ分、下にずらす */
+            margin-top: 40px; /* 0.5倍に縮小 */
         }
 
         /* 新しいファーストビューのスタイル */
         .hero-content h1 {
-            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-size: clamp(1.25rem, 4vw, 2.5rem); /* 0.5倍に縮小 */
             font-weight: 700;
             margin: 0;
             line-height: 1.5;
@@ -82,19 +81,19 @@
         
         .cta-button {
             display: inline-block;
-            padding: 15px 40px;
+            padding: 7.5px 20px; /* 0.5倍に縮小 */
             background-color: var(--white);
             color: var(--primary-color);
             font-weight: 700;
             text-decoration: none;
-            border-radius: var(--border-radius-large);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border-radius: 10px; /* 0.5倍に縮小 */
+            box-shadow: 0 2.5px 7.5px rgba(0,0,0,0.2); /* 0.5倍に縮小 */
             transition: transform 0.3s;
-            margin-top: 30px;
+            margin-top: 15px; /* 0.5倍に縮小 */
         }
 
         .cta-button:hover {
-            transform: translateY(-5px);
+            transform: translateY(-2.5px); /* 0.5倍に縮小 */
         }
 
         /* 新しいナビゲーションのスタイル */
@@ -104,15 +103,15 @@
             align-items: center;
             width: 100%;
             position: fixed;
-            top: 20px;
+            top: 10px; /* 0.5倍に縮小 */
             left: 0;
-            padding: 0 20px;
+            padding: 0 10px; /* 0.5倍に縮小 */
             box-sizing: border-box;
             z-index: 1000;
         }
 
         .hero-nav .logo {
-            font-size: 1.8rem;
+            font-size: 0.9rem; /* 0.5倍に縮小 */
             font-weight: 700;
             color: var(--white);
             text-decoration: none;
@@ -130,8 +129,8 @@
         .service-item {
             display: flex;
             align-items: center;
-            margin-bottom: 50px;
-            gap: 40px;
+            margin-bottom: 25px; /* 0.5倍に縮小 */
+            gap: 20px; /* 0.5倍に縮小 */
         }
         
         .service-item:nth-child(even) {
@@ -141,7 +140,7 @@
         .service-image {
             width: 50%;
             border-radius: var(--border-radius-large);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 2.5px 7.5px rgba(0,0,0,0.1); /* 0.5倍に縮小 */
         }
 
         .service-text {
@@ -150,33 +149,42 @@
         }
 
         .service-text h3 {
-            font-size: 2rem;
+            font-size: 1rem; /* 0.5倍に縮小 */
             color: var(--primary-color);
             margin-top: 0;
+        }
+        .service-text p {
+            font-size: 0.8rem;
         }
 
         /* 3. 特徴 */
         .feature-section {
-            background-color: #fffaf0; /* 新しい背景色 */
+            background-color: #fffaf0;
         }
 
         .feature-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* 0.5倍に縮小 */
+            gap: 15px; /* 0.5倍に縮小 */
         }
 
         .feature-card {
             background-color: var(--white);
-            padding: 30px;
+            padding: 15px; /* 0.5倍に縮小 */
             border-radius: var(--border-radius-large);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 2.5px 7.5px rgba(0,0,0,0.1); /* 0.5倍に縮小 */
+        }
+        .feature-card p {
+            font-size: 0.7rem;
+        }
+        .feature-card h3 {
+            font-size: 1rem;
         }
 
         .feature-card .icon {
-            font-size: 3rem;
+            font-size: 1.5rem; /* 0.5倍に縮小 */
             color: var(--primary-color);
-            margin-bottom: 15px;
+            margin-bottom: 7.5px; /* 0.5倍に縮小 */
         }
 
         /* 4. FAQ */
@@ -185,24 +193,27 @@
         }
 
         .faq-list {
-            max-width: 800px;
+            max-width: 400px; /* 0.5倍に縮小 */
             margin: 0 auto;
         }
 
         .faq-item {
             border-bottom: 1px solid #eee;
-            padding: 20px 0;
+            padding: 10px 0; /* 0.5倍に縮小 */
             text-align: left;
         }
 
         .faq-item h3 {
-            font-size: 1.2rem;
+            font-size: 0.6rem; /* 0.5倍に縮小 */
             color: var(--primary-color);
+        }
+        .faq-item p {
+            font-size: 0.5rem;
         }
 
         /* 5. フッター */
         .footer-section {
-            padding: 40px 20px;
+            padding: 20px 10px; /* 0.5倍に縮小 */
             background-color: var(--primary-color);
             color: var(--white);
             text-align: center;
@@ -211,23 +222,24 @@
         .footer-section p {
             margin: 0;
             opacity: 0.8;
+            font-size: 0.6rem;
         }
 
         /* モバイル対応 */
         @media (max-width: 768px) {
             h2 {
-                font-size: 2rem;
+                font-size: 1rem;
             }
             .hero-content h1 {
-                font-size: 2.5rem;
+                font-size: 1.25rem;
                 line-height: 1.2;
             }
             .hero-nav {
                 flex-direction: column;
-                gap: 15px;
+                gap: 7.5px; /* 0.5倍に縮小 */
                 position: fixed;
                 top: 0;
-                padding: 20px;
+                padding: 10px; /* 0.5倍に縮小 */
             }
             .service-item {
                 flex-direction: column;
@@ -246,7 +258,7 @@
     <!-- 1. ファーストビュー -->
     <header class="hero-section">
         <nav class="hero-nav">
-            <img src="https://placehold.co/150x150/FFFFFF/FE7B33?text=声キャン！" alt="声キャン！ロゴ" class="logo">
+            <img src="https://placehold.co/75x75/FFFFFF/FE7B33?text=声キャン！" alt="声キャン！ロゴ" class="logo" style="width: 75px; height: 75px;">
             <a href="#" class="cta-button">今すぐ始める</a>
         </nav>
         <div class="hero-content">
