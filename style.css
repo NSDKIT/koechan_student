@@ -57,26 +57,31 @@ h2 {
 
 /* 1. ファーストビュー */
 .hero {
+    /* 背景画像と背景色を分離して、画像のみの透明度を調整する */
     background-color: var(--background-light);
+    background-size: cover;
+    background-position: center;
     height: calc(100vh - 80px); /* 固定ヘッダーの高さ分、高さを調整 */
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     position: relative;
-    overflow: hidden;
+    overflow: hidden; /* 疑似要素がはみ出さないように */
 }
 
-/* 背景画像として配置する img タグのスタイル */
-.hero .bg-image {
+.hero::after {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    background-image: url('https://raw.githubusercontent.com/NSDKIT/koechan_student/main/%E8%83%8C%E6%99%AF2.png');
+    background-size: cover;
+    background-position: center;
     opacity: 0.5; /* ここで画像の透明度を調整 */
-    z-index: -1;
+    z-index: -1; /* コンテンツの下に配置 */
 }
 
 .hero-content {
@@ -85,7 +90,6 @@ h2 {
     border-radius: var(--border-radius);
     max-width: 700px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    position: relative; /* 背景の上に表示されるようにする */
 }
 
 .catchphrase {
@@ -138,9 +142,8 @@ h2 {
     text-align: center;
 }
 
-/* 図解を非表示にする */
 .flow-diagram {
-    display: none;
+    display: none; /* 図解を非表示に */
 }
 
 /* 3. 参加するメリット */
@@ -180,34 +183,44 @@ h2 {
 
 /* 4. 参加の流れ */
 .how-to-join {
-    display: none; /* 「参加の流れ」セクションを非表示にする */
+    display: none; /* 4.参加の流れを非表示に */
 }
 
-/* 5. 学生の声 - スクロールアニメーションのスタイル */
+/* 5. 学生の声 - スクロールアニメーション */
+.voices {
+    background-color: var(--background-light);
+}
+
 .scrolling-container {
-    overflow: hidden;
-    width: 100%;
-    position: relative; /* 子要素の配置基準 */
-    height: 150px; /* 高さを設定 */
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden; /* コンテナからはみ出る要素を非表示 */
+}
+
+.scrolling-content {
+    display: flex;
+    animation: scroll-left 15s linear infinite; /* 15秒で無限ループ */
 }
 
 .voice-card {
-    background-color: white;
+    flex: 0 0 auto;
+    width: 400px; /* カードの幅 */
+    margin: 0 15px;
     padding: 30px;
+    background-color: white;
     border-radius: var(--border-radius);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    width: 90%; /* カードの幅 */
-    margin: 0 auto; /* 中央揃え */
-    opacity: 0; /* デフォルトで非表示 */
-    position: absolute; /* 位置を重ねる */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: opacity 0.5s ease-in-out; /* フェードアニメーション */
+    text-align: center;
 }
 
-.voice-card.active {
-    opacity: 1; /* 表示中のカードは透明度1 */
+/* スクロールアニメーションの定義 */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }
 
 /* 6. よくある質問 */
@@ -282,24 +295,43 @@ h2 {
 
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
-    h2 { font-size: 2rem; }
+    h2 {
+        font-size: 2rem;
+    }
     .hero {
         height: auto;
         padding: 80px 20px;
     }
 
-    .catchphrase { 
-        font-size: 6vw; /* 画面幅に応じて文字サイズを調整 */
-        line-height: 1.2;
+    .catchphrase {
+        font-size: 10vw; /* 画面幅に応じて文字サイズを調整 */
     }
-    .sub-catchphrase { 
-        font-size: 3.5vw; /* 画面幅に応じて文字サイズを調整 */
-        line-height: 1.4;
+    .sub-catchphrase {
+        font-size: 4vw; /* 画面幅に応じて文字サイズを調整 */
     }
-    .cta-buttons { flex-direction: column; }
-    .cta-button { width: 100%; box-sizing: border-box; }
+    .cta-buttons {
+        flex-direction: column;
+    }
+    .cta-button {
+        width: 100%;
+        box-sizing: border-box;
+    }
 
-    .voice-card {
-        width: 90%;
+    .flow-diagram, .steps-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .flow-item {
+        width: auto;
+        text-align: center;
+    }
+    .arrow {
+        transform: rotate(90deg);
+        margin: 5px 0;
+        display: block; /* スマホで矢印を表示 */
+    }
+    .step-arrow {
+        display: block;
+        transform: rotate(90deg);
     }
 }
