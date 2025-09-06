@@ -1,11 +1,12 @@
+/* デザインコンセプトのカラー変数を定義 */
 :root {
     --primary-color: #FE7B33;
     --secondary-color: #38B6FF;
     --white: #FFFFFF;
     --black: #000000;
     --text-color: #333333;
-    --border-radius-large: 20px;
-    --border-radius-small: 10px;
+    --border-radius-large: 16px; /* 0.8倍に調整 */
+    --border-radius-small: 8px; /* 0.8倍に調整 */
 }
 
 body {
@@ -15,20 +16,19 @@ body {
     background-color: var(--white);
     color: var(--text-color);
     line-height: 1.6;
-    padding-top: 80px;
 }
 
 /* セクション共通スタイル */
 .section {
-    padding: 60px 20px;
+    padding: 48px 16px; /* 0.8倍に調整 */
     text-align: center;
 }
 
 h2 {
-    font-size: 2.5rem;
+    font-size: 2rem; /* 0.8倍に調整 */
     font-weight: 700;
     color: var(--primary-color);
-    margin-bottom: 40px;
+    margin-bottom: 32px; /* 0.8倍に調整 */
 }
 
 /* 1. ファーストビュー */
@@ -39,6 +39,12 @@ h2 {
     text-align: center;
     position: relative;
     overflow: hidden;
+    height: 33.33vh; /* 画面の1/3の高さに設定 */
+    padding-top: 0;
+    padding-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-section::before {
@@ -58,7 +64,6 @@ h2 {
 .hero-content {
     position: relative;
     z-index: 1;
-    margin-top: 80px;
 }
 
 /* 新しいファーストビューのスタイル */
@@ -69,49 +74,39 @@ h2 {
     line-height: 1.5;
 }
 
-.cta-button {
-    display: inline-block;
-    padding: 15px 40px;
+/* 2. メリットセクションのスタイル */
+.merits-section {
+    padding: 48px 16px;
     background-color: var(--white);
-    color: var(--primary-color);
-    font-weight: 700;
-    text-decoration: none;
-    border-radius: var(--border-radius-large);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    transition: transform 0.3s;
-    margin-top: 30px;
 }
 
-.cta-button:hover {
-    transform: translateY(-5px);
+.merit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-/* 新しいナビゲーションのスタイル */
-.hero-nav {
+.merit-item {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    width: 100%;
-    position: fixed;
-    top: 20px;
-    left: 0;
-    padding: 0 20px;
-    box-sizing: border-box;
-    z-index: 1000;
+    text-align: center;
 }
 
-.hero-nav .logo {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--white);
-    text-decoration: none;
+.merit-item img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
 }
 
-.hero-nav .cta-button {
-    margin: 0;
+.merit-item h3 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
 }
 
-/* 2. サービス紹介 */
+/* 3. サービス紹介 */
 .service-section {
     background-color: var(--white);
 }
@@ -144,9 +139,9 @@ h2 {
     margin-top: 0;
 }
 
-/* 3. 特徴 */
+/* 4. 特徴 */
 .feature-section {
-    background-color: #fffaf0;
+    background-color: #fffaf0; /* 新しい背景色 */
 }
 
 .feature-grid {
@@ -168,7 +163,7 @@ h2 {
     margin-bottom: 15px;
 }
 
-/* 4. FAQ */
+/* 5. FAQ */
 .faq-section {
     background-color: var(--white);
 }
@@ -189,7 +184,7 @@ h2 {
     color: var(--primary-color);
 }
 
-/* 5. フッター */
+/* 6. フッター */
 .footer-section {
     padding: 40px 20px;
     background-color: var(--primary-color);
@@ -204,9 +199,6 @@ h2 {
 
 /* モバイル対応 */
 @media (max-width: 768px) {
-    body {
-        padding-top: 100px;
-    }
     h2 {
         font-size: 2rem;
     }
