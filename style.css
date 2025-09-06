@@ -67,7 +67,8 @@ h2 {
 }
 
 .hero-content .highlight-text {
-    font-size: 2.5em; /* 親要素の1.5倍のサイズ */
+    font-size: 2.5em;
+    color: #FF0000; /* ここに好きな色を指定してください */
 }
 
 /* 新しいファーストビューのスタイル */
