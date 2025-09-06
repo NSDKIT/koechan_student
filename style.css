@@ -187,12 +187,8 @@ h2 {
 .scrolling-container {
     overflow: hidden;
     width: 100%;
-}
-
-.scrolling-content {
-    display: inline-flex;
-    white-space: nowrap;
-    animation: scroll-left 20s linear infinite;
+    position: relative; /* 子要素の配置基準 */
+    height: 150px; /* 高さを設定 */
 }
 
 .voice-card {
@@ -200,17 +196,18 @@ h2 {
     padding: 30px;
     border-radius: var(--border-radius);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    margin-right: 20px; /* カード間のスペース */
-    display: inline-block;
-    vertical-align: top;
-    width: 300px; /* カードの固定幅 */
-    flex-shrink: 0; /* 縮小しないようにする */
+    width: 90%; /* カードの幅 */
+    margin: 0 auto; /* 中央揃え */
+    opacity: 0; /* デフォルトで非表示 */
+    position: absolute; /* 位置を重ねる */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.5s ease-in-out; /* フェードアニメーション */
 }
 
-/* スクロールアニメーションの定義 */
-@keyframes scroll-left {
-    0% { transform: translateX(0%); }
-    100% { transform: translateX(-50%); } /* コンテンツが2セット分動くように設定 */
+.voice-card.active {
+    opacity: 1; /* 表示中のカードは透明度1 */
 }
 
 /* 6. よくある質問 */
@@ -302,17 +299,7 @@ h2 {
     .cta-buttons { flex-direction: column; }
     .cta-button { width: 100%; box-sizing: border-box; }
 
-    .scrolling-content {
-        animation: scroll-left-mobile 20s linear infinite;
-    }
-
-    /* モバイル専用のアニメーションキーフレームを定義 */
-    @keyframes scroll-left-mobile {
-        0% { transform: translateX(0%); }
-        100% { transform: translateX(-100%); } /* コンテンツが1セット分動くように設定 */
-    }
-
     .voice-card {
-        width: 80%; /* モバイルでのカード幅を調整 */
+        width: 90%;
     }
 }
