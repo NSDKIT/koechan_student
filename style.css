@@ -39,7 +39,7 @@ h2 {
     text-align: center;
     position: relative;
     overflow: hidden;
-    height: 33.33vh; /* 画面の1/3の高さに設定 */
+    height: 50.00vh; /* 画面の1/3の高さに設定 */
     padding-top: 0;
     padding-bottom: 0;
     display: flex;
@@ -89,7 +89,7 @@ h2 {
 
 /* ハイライトされたテキストのスタイル */
 .hero-content .highlight-text {
-    font-size: 2.5em; /* 親要素の1.5倍のサイズ */
+    font-size: 2.0em; /* 親要素の1.5倍のサイズ */
     color: var(--primary-color);
 }
 
@@ -243,7 +243,7 @@ h2 {
         font-size: 2rem;
     }
     .hero-content h1 {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         line-height: 1.2;
     }
     .hero-nav {
